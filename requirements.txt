@@ -1,0 +1,8 @@
+requests
+pytz
+yfinance
+pandas
+numpy
+python-telegram-bot
+matplotlib
+openpyxl

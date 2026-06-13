@@ -1,0 +1,29 @@
+name: Daily Telegram Bot  (stock_screening_students_v8.py)
+on:
+  schedule:
+    - cron: '*/5 * * * *'    # 每5分
+  workflow_dispatch:      # 手動觸發按鈕
+
+jobs:
+  send-message:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+    
+    - name: Run bot
+      env:
+        BOT_TOKEN: 8510592616:AAEkl42SSn-wuhB4ZysT4KW_xte3ZV4Fc9o
+        CHAT_ID: 5179697074
+      run: 
+ #       sed -i "s/bot_token = .*/bot_token = \"$BOT_TOKEN\"/" bot.py
+ #       python bot.py
+   #      sed -i "s/bot_token = .*/bot_token = \"$BOT_TOKEN\"/" stock_screening_students_v8.py
+        python stock_screening_students_v8.py

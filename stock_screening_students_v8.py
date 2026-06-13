@@ -33,10 +33,10 @@ today=date.today().strftime("%d%m%Y")
 # Import excel with stock codes and create a list L_stock which stores the 
 # stock codes
 
-L_stocks=pd.read_excel(path+filename)["代號"].tolist()
+L_stocks=pd.read_excel(path+filename)["stockcode"].tolist()
 L_stocks=[i[1:] for i in L_stocks]
 L_stocks.append("^HSI")
-L_stocks_names=pd.read_excel(path+filename)["名稱"].tolist()
+L_stocks_names=pd.read_excel(path+filename)["stockname"].tolist()
 L_stocks_names.append("恆生指數")
 # debug
 print("讀取到的欄位名稱有：", L_stocks.columns.tolist())
